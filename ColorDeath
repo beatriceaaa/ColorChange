@@ -1,0 +1,33 @@
+import turtle
+
+# Set up the turtle screen
+screen = turtle.Screen()
+screen.title("Color Changing Character")
+screen.bgcolor("white")
+
+# Create the character turtle
+character = turtle.Turtle()
+character.speed(0)
+character.width(3)
+
+# Define the colors
+colors = ["yellow", "blue", "red", "white", "gray", "black"]
+
+# Function to change the character's color
+def change_color():
+    for color in colors:
+        character.color(color)
+        screen.update()
+        turtle.delay(500)  # Delay between color changes
+
+# Hide the turtle and move it to starting position
+character.hideturtle()
+character.penup()
+character.goto(0, -100)
+character.pendown()
+
+# Start the color changing animation
+change_color()
+
+# Exit the program when the user closes the window
+turtle.done()
